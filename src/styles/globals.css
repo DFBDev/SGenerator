@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{  
+  --primary-accent: #6FB95C;
+  --secondary-accent: #8DB084;
+  --list-shade-stack: rgba(0, 0, 0, 0.1);
+  --song-image-accent: #3A8528;
+  --song-title-h1: #579847;
+  --song-title-h2: #6A8C62;
+  --search-button-color: #094300;
+  --search-bar-color: rgba(200, 200, 200, 0.1);
+}
+
+body {
+  width:100vw;
+  background-image: url("/images/Figma-Background.svg");
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
