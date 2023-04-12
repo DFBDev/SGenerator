@@ -15,15 +15,19 @@ export default function Home() {
         </button>
       </header>
       <section className={styles.homeMainMidContainer}>
-        <h1>Having a hard time finding new songs?</h1>
-        <h2>
+        <h1 className={styles.mainHeadingOneMid}>Having a hard time finding new songs?</h1>
+        <h2 className={styles.mainHeadingTwoMid}>
           Enter any artist, era or genre for a randomized assortment of
           songs and podcasts!
         </h2>
-        <form>
-          <input type="text" name="searchInput"/>
+        <hr className={styles.hrMid}></hr>
+        <form className={styles.searchFormContainerMid}>
+          <input className={styles.searchBarMid} type="text" placeholder='Enter Artist, Song or Era!'/>
           <label htmlFor="searchInput"></label>
-          <button type="submit">Testing</button>
+          <button className={styles.searchButtonMid} type="submit">
+            <div className={styles.buttonGraphicMid}>
+            </div>
+          </button>
         </form>
       </section>
     </main>
