@@ -14,6 +14,7 @@ export default function Home() {
           ?
         </button>
       </header>
+      {/* Stage 2 - Middle Headers & Form Container */}
       <section className={styles.homeMainMidContainer}>
         <h1 className={styles.mainHeadingOneMid}>Having a hard time finding new songs?</h1>
         <h2 className={styles.mainHeadingTwoMid}>
@@ -25,8 +26,7 @@ export default function Home() {
           <input className={styles.searchBarMid} type="text" placeholder='Enter Artist, Song or Era!'/>
           <label htmlFor="searchInput"></label>
           <button className={styles.searchButtonMid} type="submit">
-            <div className={styles.buttonGraphicMid}>
-            </div>
+            <div className={styles.buttonGraphicMid}></div>
           </button>
         </form>
       </section>

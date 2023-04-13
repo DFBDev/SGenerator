@@ -1,7 +1,22 @@
 @import "/global.css";
 @import url("https://fonts.googleapis.com/css?family=Roboto Mono");
 
-/* Abbreviations such as TL/TR stand for position on page */
+/* !!This file is for styling configs for main website page!! */
+/* Abbreviations such as TL/TR stand for position on page (top-left, top-right, etc) */
+
+@media screen and (min-width:1600px){
+    .mainHeadingOneMid{
+        font-size:2.3rem !important;
+    }   
+    .mainHeadingTwoMid{
+        font-size:1.5rem !important;
+    }
+    .homeMainMidContainer{
+        gap:1.5rem !important;
+    }
+}
+
+/* ------------------------------------- */
 
 .header{
     display:flex;
@@ -37,12 +52,15 @@
     box-shadow: 0px 0px 3px 0.5px rgba(34, 236, 30, 0.75) inset;
     font-size:0.9rem;
 }
+
+/* ------------------------------------- */
+
 .homeMainMidContainer{
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    gap:1rem;
+    gap:1.2rem;
     width:54vw;
     height:40vh;
     min-width:300px;
@@ -91,7 +109,7 @@
 .searchBarMid::placeholder{
     color:var(--secondary-accent);
     opacity:0.3;
-  }
+}
 .searchBarMid:focus{
     outline-style:solid !important;
     outline-color:var(--primary-accent);
@@ -130,3 +148,5 @@
     transform:scale(0.9);
     transition:none !important;
 }
+
+/* ------------------------------------- */
