@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import styles from "@/styles/main.module.css"
+import { InfoWindow } from '@/comps/infoWindow'
+import { useState } from 'react'
 
 export default function Home() {
+  const [overlayStatus, setOS] = useState("initialInactive");
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       {/* Stage 1 - Header Section */}
@@ -10,7 +14,8 @@ export default function Home() {
           <Image src={"/images/spotify.png"} width={40} height={40} alt="Spotify Logo"></Image>
           <h1 className={styles.homeMainHeadingTL}>Suggestions</h1>
         </div>
-        <button className={styles.supportButtonTR}>
+        <button className={styles.supportButtonTR} onClick={() => {if (overlayStatus == "inactive" || overlayStatus == "initialInactive")
+        {setOS("active")} else{setOS("inactive")}}}>
           ?
         </button>
       </header>
@@ -30,6 +35,7 @@ export default function Home() {
           </button>
         </form>
       </section>
+      <InfoWindow status={overlayStatus}/>
     </main>
   )
 }
