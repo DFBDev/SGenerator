@@ -1,0 +1,21 @@
+@import "/global.css";
+
+/* Support/Info PopUp styles */
+
+.supportPageCover{
+    width:100vw;
+    position:absolute;
+    height:100vh;
+    background-color: aqua;
+    background-color: var(--pop-up-bgcolor);
+    backdrop-filter: blur(10px);
+    z-index:9;
+}
+.exitButton{
+    margin-left:1%;
+    margin-top:1%;
+    padding-left:1%;
+    padding-right:1%;
+    color:var(--primary-accent);
+    border:solid 1px var(--primary-accent);
+}
