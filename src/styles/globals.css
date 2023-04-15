@@ -4,12 +4,12 @@
 
 :root{  
   --primary-accent: #6FB95C;
-  --secondary-accent: #8DB084;
+  --secondary-accent: #aabca7;
   --list-shade-stack: rgba(0, 0, 0, 0.1);
   --song-image-accent: #3A8528;
   --song-title-h1: #579847;
   --song-title-h2: #6A8C62;
-  --search-button-color: #094300;
+  --search-button-color: #0D5A00;
   --search-bar-color: rgba(200, 200, 200, 0.1);
   --pop-up-bgcolor: rgba(4, 26, 0, 0.5);
 }
