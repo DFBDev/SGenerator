@@ -25,14 +25,14 @@ export const InfoWindow = (flag : {status : string}) : JSX.Element => {
                     <article className={styles.supportInformationContent}>
                         <p className={styles.supportInformationParagraph}>
                             For any issues regarding bugs, suggestions, or anything else of concern, please contact <br/>
-                            <a className={styles.supportInformationSpan} target="_blank" href="mailto:dbdevbusiness@gmail.com">
+                            <a className={styles.supportInformationAnc} target="_blank" href="mailto:dbdevbusiness@gmail.com">
                                 dbdevbusiness@gmail.com
                             </a>
                         </p>
                         <hr className={styles.supportInformationLineDivider}></hr>
                         <p className={styles.supportInformationParagraph}>
                         No account required. Content is generated via Spotify API, so throttling may occur if too many generation requests are made.<br/>
-                        <a className={styles.supportInformationSpan} href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API Docs</a>
+                        <a className={styles.supportInformationAnc} href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API Docs</a>
                         </p>
                     </article>
                 </section>

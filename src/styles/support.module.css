@@ -103,7 +103,12 @@
     width:80%;
     border-color:var(--primary-accent);
 }
-.supportInformationSpan{
+.supportInformationAnc{
     text-align:center;
     color:var(--primary-accent);
+    transition:all 0.3s ease-in-out;
+}
+.supportInformationAnc:hover{
+    color:rgba(4, 255, 0, 0.75);
+    text-shadow: 0 0 5px #FFF;
 }
