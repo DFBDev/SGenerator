@@ -3,7 +3,7 @@
 /* !!This file is for styling configs for main website page!! */
 /* Abbreviations such as TL/TR stand for position on page (top-left, top-right, etc) */
 
-@media screen and (min-width:1600px){
+@media screen and (min-width:1800px){
     .homeMainHeadingTL{
         font-size:clamp(1.5rem, 1.5vw, 3rem) !important;
     }
@@ -83,6 +83,7 @@
     color:var(--secondary-accent);
     font-size:1.2rem;
     font-weight:300;
+    max-width:500px;
 }
 .hrMid{
     margin-top:1rem;
