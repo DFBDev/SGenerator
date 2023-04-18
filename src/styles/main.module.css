@@ -16,6 +16,10 @@
     .homeMainMidContainer{
         gap:1.5rem !important;
     }
+    .supportButtonTR{
+        width: 2.6rem !important;
+        height: 2.6rem !important;
+    }
 }
 
 /* ------------------------------------- */

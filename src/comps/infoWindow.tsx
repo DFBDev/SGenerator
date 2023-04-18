@@ -1,5 +1,6 @@
 import styles from "@/styles/support.module.css"
 import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion";
 
 export const InfoWindow = (flag : {status : string}) : JSX.Element => {
     const [exitStatus, setES] = useState("exit");
@@ -11,10 +12,13 @@ export const InfoWindow = (flag : {status : string}) : JSX.Element => {
     }, [flag.status]);
 
     return (
-        <>
+        <AnimatePresence>
         {exitStatus == "noexit" && (
-            <div className={styles.supportPageCover}>
-                <section className={styles.supportMidBoxContainer}>
+            <motion.div className={styles.supportPageCover} 
+            initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} key={exitStatus}>
+                <motion.section className={styles.supportMidBoxContainer}
+                initial={{translateY: -1000}} animate={{translateY: 0}} 
+                exit={{translateY: 1000}} transition={{duration: 0.6}} key={exitStatus}>
                     <header className={styles.supportInformationHeader}>
                         <h1 className={styles.supportInformationH1}>Info_Support</h1>
                         <button className={styles.exitButton} onClick={() => {setES("exit")}}>
@@ -35,12 +39,12 @@ export const InfoWindow = (flag : {status : string}) : JSX.Element => {
                         <a className={styles.supportInformationAnc} href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API Docs</a>
                         </p>
                     </article>
-                </section>
-            </div>
+                </motion.section>
+            </motion.div>
         )}
         {exitStatus == "exit" && (
             <></>
         )}
-        </>
+    </AnimatePresence>
     )
-}       
+}     
