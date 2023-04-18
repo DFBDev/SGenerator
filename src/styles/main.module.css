@@ -5,10 +5,10 @@
 
 @media screen and (min-width:1600px){
     .mainHeadingOneMid{
-        font-size:clamp(2.3rem, 2vw, 5rem) !important;
+        font-size:clamp(2.3rem, 3vw, 5rem) !important;
     }   
     .mainHeadingTwoMid{
-        font-size:clamp(1.5rem, 1vw, 3rem)!important;
+        font-size:clamp(1.5rem, 2vw, 3rem)!important;
     }
     .homeMainMidContainer{
         gap:1.5rem !important;
