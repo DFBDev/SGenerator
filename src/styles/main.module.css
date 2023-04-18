@@ -100,6 +100,7 @@
 .searchBarMid{
     width:90%;
     height:2.5rem;
+    max-width:600px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius:0.3rem;
     padding-left:2%;
