@@ -23,12 +23,12 @@ export default function Home() {
       <section className={styles.homeMainMidContainer}>
         <h1 className={styles.mainHeadingOneMid}>Having a hard time finding new songs?</h1>
         <h2 className={styles.mainHeadingTwoMid}>
-          Enter any artist, era or genre for a randomized assortment of
+          Enter any artist, time-period or genre for a randomized assortment of
           songs and podcasts!
         </h2>
         <hr className={styles.hrMid}></hr>
         <form className={styles.searchFormContainerMid}>
-          <input className={styles.searchBarMid} type="text" placeholder='Enter Artist, Song or Era!'/>
+          <input className={styles.searchBarMid} type="text" placeholder='Enter artist, song or time-period!'/>
           <label htmlFor="searchInput"></label>
           <button className={styles.searchButtonMid} type="submit">
             <div className={styles.buttonGraphicMid}></div>
