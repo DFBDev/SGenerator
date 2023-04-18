@@ -19,10 +19,11 @@
     .supportButtonTR{
         width: 3rem !important;
         height: 3rem !important;
+        font-size:1.6rem;
     }
 }
 
-/* ------------------------------------- */
+/* ---------- Main Home Heading (support button & title) ---------- */
 
 .header{
     display:flex;
@@ -59,7 +60,7 @@
     font-size:0.9rem;
 }
 
-/* ------------------------------------- */
+/* ---------- Middle Main Container (search bar, search button, headings, etc) ---------- */
 
 .homeMainMidContainer{
     display:flex;
@@ -158,4 +159,4 @@
     transition:none !important;
 }
 
-/* ------------------------------------- */
+/* ---------- End of Styling ---------- */
