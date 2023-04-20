@@ -35,8 +35,8 @@ export const InfoWindow = (flag : {status : string}) : JSX.Element => {
                         </p>
                         <hr className={styles.supportInformationLineDivider}></hr>
                         <p className={styles.supportInformationParagraph}>
-                        No account required. Content is generated via Spotify API, so throttling may occur if too many generation requests are made.<br/>
-                        <a className={styles.supportInformationAnc} href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API Docs</a>
+                            No account required. Content is generated via Spotify API, so throttling may occur if too many generation requests are made.<br/>
+                            <a className={styles.supportInformationAnc} href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API Docs</a>
                         </p>
                     </article>
                 </motion.section>
