@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from "@/styles/main.module.css"
 import { InfoWindow } from '@/comps/infoWindow'
 import { useState } from 'react'
@@ -30,9 +31,11 @@ export default function Home() {
         <form className={styles.searchFormContainerMid}>
           <input className={styles.searchBarMid} type="text" placeholder='Enter artist, song or time-period!'/>
           <label htmlFor="searchInput"></label>
-          <button className={styles.searchButtonMid} type="submit">
-            <div className={styles.buttonGraphicMid}></div>
-          </button>
+          <Link href={"/searchresults/searchPage"} className={styles.searchButtonMid}>
+            <button type="submit">
+              <div className={styles.buttonGraphicMid}></div>
+            </button>
+          </Link>
         </form>
       </section>
       <InfoWindow status={overlayStatus}/>
