@@ -23,6 +23,7 @@
     max-width:350px;
     min-width:325px;
     border-radius:1rem;
+    margin-bottom:2%;
 }
 .supportInformationHeader{
     display:flex;
