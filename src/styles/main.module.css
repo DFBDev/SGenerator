@@ -23,7 +23,7 @@
     }
 }
 
-/* ---------- Main Home Heading (support button & title) ---------- */
+/* ------ Main Home Heading (support button & title) ------ */
 
 .header{
     display:flex;
@@ -60,7 +60,7 @@
     font-size:0.9rem;
 }
 
-/* ---------- Middle Main Container (search bar, search button, headings, etc) ---------- */
+/* ------ Middle Main Container (search bar, search button, headings, etc) ------ */
 
 .homeMainMidContainer{
     display:flex;
@@ -159,4 +159,4 @@
     transition:none !important;
 }
 
-/* ---------- End of Styling ---------- */
+/* ------ End of Styling ------ */

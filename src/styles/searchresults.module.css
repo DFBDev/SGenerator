@@ -1,9 +1,17 @@
 @import "/globals.css";
 
 .searchResultPageCover{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
     width:100vw;
     height:100vh;
     background: linear-gradient(180deg, #175C0B 0%, #041E00 100%);
+}
+.navBar{
+    width:100%;
+    margin-bottom:auto;
 }
 .backButton{
     padding-left:1%;
@@ -14,4 +22,88 @@
     margin-left:1%;
     margin-top:1%;
     color:var(--primary-accent);
+}
+.resultsContainerMid{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:absolute;
+    gap:1.1rem;
+    width:30vw;
+    height:86vh;
+    min-width:350px;
+    max-height:600px;
+    max-width:400px;
+    background-color: rgba(0,0,0,0.1);
+}
+.trackContainerMid{
+    display:flex;
+    width:90%;
+    height:16%;
+    background-color: rgba(0,0,0,0.1);
+}
+.trackArtworkContainer{
+    width:4.4rem;
+    height:4.4rem;
+    margin:auto 6% auto 4%;
+    border-color:#3A8528;
+    border-style:solid;
+    border-width:2px;
+    border-radius:0.2rem;
+}
+.trackInfoContainer{
+    display:flex;
+    flex:auto;
+    flex-direction:column;
+    justify-content:center;
+    align-items:left;
+}
+.tracksH1{
+    width:60%;
+    font-size:1.2rem;
+    color:#579847;
+}
+.tracksH2{
+    font-size:0.8rem;
+    width:60%;
+    color:#A6C29F;
+    margin-left:0.45%;
+}
+.tracksTools{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    width:14%;
+}
+.sampleButton{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-color:var(--primary-accent);
+    border-radius:100%;
+    border-width:1px;
+    width:2rem;
+    height:2rem;
+    margin-bottom:20%;
+    transition:all 0.3s ease-in-out;
+}
+.sampleButtonGraphic{
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid var(--primary-accent);
+    margin-left:10%;
+    transition:all 0.3s ease-in-out;
+}
+.sampleButton:hover .sampleButtonGraphic{
+    border-left-color: rgba(34, 236, 30, 0.8);
+    transform:scale(0.7);
+}
+.sampleButton:hover{
+    transform:scale(1.1);
+    background-color:rgba(3, 34, 7, 0.6);
+    box-shadow: 0px 0px 3px 2px rgba(34, 236, 30, 0.75) inset;
 }

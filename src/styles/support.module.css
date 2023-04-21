@@ -2,6 +2,8 @@
 
 /* Support/Info PopUp styles */
 
+/* ------ Page Externals ------ */
+
 .supportPageCover{
     display:flex;
     justify-content:center;
@@ -25,6 +27,9 @@
     border-radius:1rem;
     margin-bottom:2%;
 }
+
+/* ------ Pop Up Content ------ */
+
 .supportInformationHeader{
     display:flex;
     justify-content:center;
@@ -72,17 +77,7 @@
     background-color:var(--primary-accent);
     transform:rotate(45deg);
     transition:all 0.3s ease-in-out;
-}   
-.exitButton:hover{
-    transform:scale(1.2);
-    border-color:#41d01d;
-    background-color:rgba(1, 21, 4, 0.3);
-    box-shadow: 0px 0px 3px 0.5px rgba(34, 236, 30, 0.75) inset;
-}
-.exitButton:hover .exitButtonLeg1, .exitButton:hover .exitButtonLeg2{
-    width:0.9rem;
-    background-color:#41d01d;
-}
+}  
 .supportInformationContent{
     display:flex;
     gap:1.5rem;
@@ -109,7 +104,22 @@
     color:var(--primary-accent);
     transition:all 0.3s ease-in-out;
 }
+
+/* ------ Pseudo Styles ------ */
+
 .supportInformationAnc:hover{
     color:rgba(4, 255, 0, 0.75);
     text-shadow: 0 0 5px #FFF;
 }
+.exitButton:hover{
+    transform:scale(1.2);
+    border-color:#41d01d;
+    background-color:rgba(1, 21, 4, 0.3);
+    box-shadow: 0px 0px 3px 0.5px rgba(34, 236, 30, 0.75) inset;
+}
+.exitButton:hover .exitButtonLeg1, .exitButton:hover .exitButtonLeg2{
+    width:0.9rem;
+    background-color:#41d01d;
+}
+
+/* ------ End of Styling ------ */
