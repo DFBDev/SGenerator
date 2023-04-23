@@ -1,5 +1,7 @@
 @import "/globals.css";
 
+/* ------ Animations ------ */
+
 @keyframes shake {
     0%{
         transform:rotate(0deg);
@@ -20,6 +22,9 @@
         transform:rotate(0deg);
     }
 }
+
+/* ------ Outer Elements (none mid container) ------ */
+
 .searchResultPageCover{
     display:flex;
     justify-content:center;
@@ -63,6 +68,9 @@
 .refreshButtonGraphic{
     transition:all 0.2s ease-in-out;
 }
+
+/* ------ Middle Results Container ------ */
+
 .resultsContainerMid{
     display:flex;
     justify-content:center;
@@ -139,6 +147,8 @@
     transition:all 0.2s ease-in-out;
 }
 
+/* ------ Pseudo Stylings ------ */
+
 .backButton:hover .backButtonGraphic{
     border-left-color:#41d01d;
     transform:scale(0.7);
@@ -162,3 +172,5 @@
 .refreshButton:hover{
     animation: shake 1.4s ease-in-out;
 }
+
+/* ------ End of Styling ------ */

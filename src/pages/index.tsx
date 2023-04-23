@@ -30,6 +30,7 @@ export default function Home() {
         <hr className={styles.hrMid}></hr>
         <form className={styles.searchFormContainerMid}>
           <input className={styles.searchBarMid} type="text" placeholder='Enter artist, song or time-period!'/>
+          <span className={styles.lockOnEffect}></span>
           <label htmlFor="searchInput"></label>
           <Link href={"/searchresults/searchPage"} className={styles.searchButtonMid}>
             <button type="submit">
