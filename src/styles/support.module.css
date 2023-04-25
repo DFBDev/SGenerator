@@ -113,13 +113,13 @@
 }
 .exitButton:hover{
     transform:scale(1.2);
-    border-color:#41d01d;
+    border-color:#5ddc3d;
     background-color:rgba(1, 21, 4, 0.3);
-    box-shadow: 0px 0px 3px 0.5px rgba(34, 236, 30, 0.75) inset;
+    box-shadow: 0px 0px 3px 2px rgba(67, 231, 64, 0.75) inset;
 }
 .exitButton:hover .exitButtonLeg1, .exitButton:hover .exitButtonLeg2{
     width:0.9rem;
-    background-color:#41d01d;
+    background-color:#5ddc3d;
 }
 
 /* ------ End of Styling ------ */

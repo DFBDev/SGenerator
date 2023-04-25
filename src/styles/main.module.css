@@ -3,6 +3,8 @@
 /* !!This file is for styling configs for main website page!! */
 /* Abbreviations such as TL/TR stand for position on page (top-left, top-right, etc) */
 
+/* ------ Animations and Breakpoints ------*/
+
 @media screen and (min-width:1800px){
     .homeMainHeadingTL{
         font-size:clamp(1.5rem, 1.5vw, 3rem) !important;
@@ -33,6 +35,15 @@
         opacity:1;
     }
 }
+@keyframes selectBackgroundFill {
+    0%{
+        transform:translateX(-90%)
+    }
+    100%{
+        transform:translateX(0%);
+    }
+}
+
 /* ------ Main Home Heading (support button & title) ------ */
 
 .header{
@@ -63,10 +74,10 @@
 }
 .supportButtonTR:hover{
     transform:scale(1.2);
-    color:#41d01d;
-    border-color:#41d01d;
-    background-color:rgba(1, 21, 4, 0.3);
-    box-shadow: 0px 0px 3px 0.5px rgba(34, 236, 30, 0.75) inset;
+    color:#5ddc3d;
+    border-color:#5ddc3d;
+    background-color:rgba(1, 21, 4, 0.6);
+    box-shadow: 0px 0px 3px 2px rgba(67, 231, 64, 0.75) inset;
     font-size:0.9rem;
 }
 
@@ -113,6 +124,7 @@
     margin-left:auto;
     margin-right:auto;
     min-width:358px;
+    
 }
 .searchBarMid{
     width:48vw;
@@ -126,14 +138,14 @@
     color:var(--secondary-accent);
     min-width:290px;
     max-width:501px;
-    margin-left:auto;
+    backdrop-filter:blur(4px);
 }
 .searchBarMid::placeholder{
     color:var(--secondary-accent);
     opacity:0.3;
 }
 .searchBarMid:focus + .lockOnEffect {
-    animation:selectFadeIn 0.5s ease-in-out;
+    animation:selectFadeIn 0.6s ease-in-out;
     opacity:1;
 }
 .searchButtonMid{
@@ -142,40 +154,54 @@
     align-items:center;
     width:10%;
     min-width:60px;
-    margin-left:2%;
-    margin-right:auto;
+    margin-left:auto;
     background-color: var(--search-button-color);
     color:var(--primary-accent);
     border-radius:0.3rem;
+    margin-left:2%;
     transition:all 0.2s ease-in-out;
+    overflow: hidden;
 }
-.buttonGraphicMid{
-  width: 0; 
-  height: 0; 
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 16px solid var(--primary-accent);
-  margin-left:6%;
-  transition:all 0.2s ease-in-out;
-}
-.searchButtonMid:hover .buttonGraphicMid{
-    border-left-color: rgba(34, 236, 30, 0.8);
-    transform:scale(0.7);
+.searchButtonMid::before{
+    content:'';
+    min-width:80px;
+    min-height:40px;
+    border-radius:0.3rem;
+    opacity:0;
 }
 .searchButtonMid:hover{
     transform:scale(1.1);
-    background-color:rgba(3, 34, 7, 0.1);
-    box-shadow: 0px 0px 3px 2px rgba(34, 236, 30, 0.75) inset;
+    box-shadow: 0px 0px 3px 0.5px rgb(39, 236, 75);
+}
+.searchButtonMid:hover .buttonGraphicMid{
+    border-left-color:rgba(1, 21, 4, 0.7);
+    transition:all 0.6s ease-in-out;
+}
+.searchButtonMid:hover::before{
+    opacity:1;
+    background-color:rgba(71, 224, 68, 0.6);
+    animation:selectBackgroundFill 0.6s ease-in-out;
+    border-radius:0.3rem;
+}
+.buttonGraphicMid{
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid var(--primary-accent);
+    transition:all 0.2s ease-in-out;
+    position:relative;
+    right:240%;
 }
 .searchButtonMid:active{
-    transform:scale(0.9);
-    transition:0.1s !important;
+    transform:scale(1);
+    transition:0.1s ease-in-out !important;
 }
 .lockOnEffect{ 
     height:2.5rem;
-    width:47vw;
+    width:48vw;
     min-width:290px;
-    max-width:490px;
+    max-width:500px;
     position:absolute;
     border-width:1px;
     border-color:var(--primary-accent);

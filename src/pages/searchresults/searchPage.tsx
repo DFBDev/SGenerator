@@ -5,12 +5,13 @@ import Link from "next/link";
 
 const SearchResultPage: NextPage = () => {
     return (
-        <Link href={"../"}>
             <div className={styles.searchResultPageCover}>
                 <nav className={styles.navBar}>
-                    <button className={styles.backButton}>
-                        <Image className={styles.backButtonGraphic} src={"/images/Arrow 1.svg"} width={20} height={20} alt="Back Arrow"></Image>
-                    </button>
+                    <Link href={"../"}>
+                        <button className={styles.backButton}>
+                            <Image className={styles.backButtonGraphic} src={"/images/Arrow 1.svg"} width={20} height={20} alt="Back Arrow"></Image>
+                        </button>
+                    </Link>
                     <button className={styles.refreshButton}>
                         <Image className={styles.refreshButtonGraphic} src={"/images/Arrow 2.svg"} width={30} height={30} alt="Refresh Arrow"></Image>
                     </button>
@@ -83,7 +84,6 @@ const SearchResultPage: NextPage = () => {
                     </article>
                 </section>
             </div>
-        </Link>
     )
 };
 
