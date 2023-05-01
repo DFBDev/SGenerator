@@ -1,0 +1,89 @@
+@import "/src/styles/globals.css";
+
+@keyframes holdAndDisappear {
+    0%{
+        opacity:1;
+        z-index:1;
+    }
+    90%{
+        opacity:1;
+        z-index:1;
+    }
+    100%{
+        opacity:0;
+        z-index:1;
+    }
+}
+@keyframes LoadingBarExtend {
+    0%{
+        width:0.01%;
+    }
+    100%{
+        width:100%;
+    }
+}
+.preloaderCover{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    opacity:0;
+    animation:holdAndDisappear 7s ease-in-out; 
+    background-color: #041A00;
+    z-index:-3;
+}
+.preloaderContent{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin-bottom:4%;
+}
+.preloaderSpotifyImage{
+    border-radius:100%;
+    box-shadow: 0px 0px 6px 4px rgba(111, 185, 92, 0.25);
+}
+.preloaderDivider{
+    height:2px;
+    width:20%;
+    max-width:50px;
+    background-color: #9DB497;
+    opacity:0.5;
+    margin-top:8%;
+}
+.preloaderHeader{
+    margin-top:5%;
+    font-size:1.6rem;
+    font-family:"Roboto Mono";
+    color:var(--primary-accent)
+}
+.preloaderBarContainer{
+    display:flex;
+    justify-content:space-between;
+    width:86%;
+    margin-top:6%;
+}
+.preloaderLoadingBar{
+    display:flex;
+    align-items: left;
+    border-color:#9DB497;
+    border-style:solid;
+    border-width:2px;
+    opacity:0.7;
+    width:86%;
+    max-height:24px;
+    max-width:227px;
+    border-radius:0.4rem;
+    overflow:hidden;
+}
+.preloaderFill{
+    height:100%;
+    width:100%;
+    background-color:#53b939b2;
+    animation:LoadingBarExtend 6s ease-in-out;
+}
+.preloaderPercentage{
+    color:#7CFF5BB2;
+}

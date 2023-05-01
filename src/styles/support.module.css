@@ -89,6 +89,8 @@
     margin-left:auto;
     margin-right:auto;
     margin-bottom:auto;
+    font-family:"Roboto Mono";
+    font-size:0.95rem;
 }
 .supportInformationParagraph{
     text-align:center;

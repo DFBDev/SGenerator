@@ -17,10 +17,11 @@
     }
     .homeMainMidContainer{
         gap:1.5rem !important;
+        margin-top:4rem;
     }
     .supportButtonTR{
-        width: 3rem !important;
-        height: 3rem !important;
+        width:3rem !important;
+        height:3rem !important;
         font-size:1.6rem;
     }
 }
@@ -142,6 +143,9 @@
     max-width:501px;
     backdrop-filter:blur(4px);
 }
+
+/* ------ Pseudo Elements/Features ------ */
+
 .searchBarMid::placeholder{
     color:var(--secondary-accent);
     opacity:0.3;

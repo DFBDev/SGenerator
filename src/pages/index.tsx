@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from "@/styles/main.module.css"
 import { InfoWindow } from '@/comps/infoWindow'
+import { LoadingWindow } from '@/comps/preloader'
 import { useState } from 'react'
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
+      <LoadingWindow status={overlayStatus}></LoadingWindow>
       {/* Stage 1 - Header Section */}
       <header className={styles.header}>
         <div className='flex justify-center items-center ml-6 mt-6'>
