@@ -143,7 +143,11 @@
     max-width:501px;
     backdrop-filter:blur(4px);
 }
-
+.midFooter{
+    color:var(--secondary-accent);
+    opacity:0.5;
+    font-size:0.8rem;
+}
 /* ------ Pseudo Elements/Features ------ */
 
 .searchBarMid::placeholder{
