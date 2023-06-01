@@ -2,14 +2,14 @@ import styles from "@/styles/support.module.css"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion";
 
-export const InfoWindow = (flag : {status : string}) : JSX.Element => {
+export const InfoWindow = (props : {status : string}) : JSX.Element => {
     const [exitStatus, setES] = useState("exit");
 
     useEffect(() => {
-        if (flag.status != "initialInactive"){
+        if (props.status != "initialInactive"){
             setES("noexit");
         };
-    }, [flag.status]);
+    }, [props.status]);
 
     return (
         <AnimatePresence>

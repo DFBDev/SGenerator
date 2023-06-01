@@ -2,15 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from "@/styles/main.module.css"
 import { InfoWindow } from '@/comps/infoWindow'
-import { LoadingWindow } from '@/comps/preloader'
-import {useState} from 'react'
+import { useState } from 'react'
 
 export default function Home() {
   const [overlayStatus, setOS] = useState("initialInactive");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <LoadingWindow></LoadingWindow>
       {/* Stage 1 - Header Section */}
       <header className={styles.header}>
         <div className='flex justify-center items-center ml-6 mt-6'>
@@ -42,6 +40,7 @@ export default function Home() {
         </form>
         <h3 className={styles.midFooter}>API and Services are sole property of SpotifyAB™</h3>
       </section>
+      {/* Stage 3 - Information/Support Pop-up Window */}
       <InfoWindow status={overlayStatus}/>
     </main>
   )
