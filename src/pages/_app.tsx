@@ -148,7 +148,7 @@ export default function App({ Component, pageProps }: AppProps) {
     })
     .catch(response => {
       console.error(response)
-      console.log(access_key + " : " + refresh_key);
+      console.log(access_key.current + " : " + refresh_key.current);
       fetch('https://accounts.spotify.com/api/token', refreshAuthenticationInfo)
       .then(res => res.json())
       .then(jsonData => {access_key.current = jsonData.access_token, refresh_key.current = jsonData.refresh_token});
