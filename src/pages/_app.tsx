@@ -142,7 +142,7 @@ export default function App({ Component, pageProps }: AppProps) {
     .then(jsonData => {
       access_key.current = jsonData.access_token;
       refresh_key.current = jsonData.refresh_token;
-      console.log(access_key + " : " + refresh_key);
+      console.log(access_key.current + " : " + refresh_key.current);
       console.log(jsonData + ": API RES SUCCESS 200");
       localStorage.setItem("apiValid", "!Valid");
     })
