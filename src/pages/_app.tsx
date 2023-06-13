@@ -133,6 +133,8 @@ export default function App({ Component, pageProps }: AppProps) {
   //Setting token and adding Event Listener on initial site render.
 
   useEffect(() => {
+    setTimeout(() => 
+    {
     localStorage.clear();
     localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
     const searchButton = document.querySelector('#searchButton');
@@ -153,6 +155,7 @@ export default function App({ Component, pageProps }: AppProps) {
       .then(res => res.json())
       .then(jsonData => {access_key.current = jsonData.access_token, refresh_key.current = jsonData.refresh_token});
     });
+  }, 2000)
   });
 
   //Coupled with preloader component, as well as consistent state via useRef.
