@@ -140,13 +140,15 @@ export default function App({ Component, pageProps }: AppProps) {
     fetch('https://accounts.spotify.com/api/token', authenticationInfo)
     .then(res => res.json())
     .then(jsonData => {
-      access_key.current = jsonData.access_token, 
-      refresh_key.current = jsonData.refresh_token,
+      access_key.current = jsonData.access_token;
+      refresh_key.current = jsonData.refresh_token;
+      console.log(access_key + " : " + refresh_key);
       console.log(jsonData + ": API RES SUCCESS 200");
       localStorage.setItem("apiValid", "!Valid");
     })
     .catch(response => {
       console.error(response)
+      console.log(access_key + " : " + refresh_key);
       fetch('https://accounts.spotify.com/api/token', refreshAuthenticationInfo)
       .then(res => res.json())
       .then(jsonData => {access_key.current = jsonData.access_token, refresh_key.current = jsonData.refresh_token});
