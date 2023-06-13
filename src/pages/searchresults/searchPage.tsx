@@ -108,10 +108,8 @@ const SearchResultPage: NextPage = () => {
     
             //Inserting JSON data into Local Storage.
             
-            if (typeof window !== 'undefined'){
-                localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
-                setTSSS(JSON.parse(JSON.stringify(responseData.current)));
-            }
+            localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
+            setTSSS(JSON.parse(JSON.stringify(responseData.current)));
           }
         )
         .catch(error => {console.log(error)});
