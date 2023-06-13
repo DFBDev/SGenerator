@@ -45,11 +45,19 @@ const SearchResultPage: NextPage = () => {
       });
 
     const [tempStoredSongsRaw, setTSSS] = useState(responseData.current);
+    
+    const fetchKey = () => {
+        if (typeof window !== 'undefined'){
+            return(
+                localStorage.getItem("A_K")
+            )
+        }
+    };
 
     var tracksRequestInfo = {
         method: 'GET', 
         headers: {
-          'Authorization': "Bearer " + localStorage.getItem("A_K")
+          'Authorization': "Bearer " + {fetchKey}
         }
       };
 
@@ -100,8 +108,10 @@ const SearchResultPage: NextPage = () => {
     
             //Inserting JSON data into Local Storage.
             
-            localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
-            setTSSS(JSON.parse(JSON.stringify(responseData.current)));
+            if (typeof window !== 'undefined'){
+                localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
+                setTSSS(JSON.parse(JSON.stringify(responseData.current)));
+            }
           }
         )
         .catch(error => {console.log(error)});
