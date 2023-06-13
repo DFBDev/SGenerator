@@ -47,10 +47,6 @@ const SearchResultPage: NextPage = () => {
     
     const [tempStoredSongsRaw, setTSSS] = useState(responseData.current);
 
-    if (typeof window !== 'undefined'){
-        setTSSS(JSON.parse(localStorage?.getItem("fetchedSongs")!));
-    }
-
     //Fetching/Parsing JSON results from Local Storage and applying it to state to
     //keep in sync with Local Storage (with limiter to prevent unlimited rerendering).
 

@@ -79,7 +79,7 @@ export default function App({ Component, pageProps }: AppProps) {
   });
   
   const songSearchQuery = () => {
-    let randomizedOffset = Math.floor(Math.random() * 30).toString();
+    let randomizedOffset = Math.floor(Math.random() * 100).toString();
     let userInput = localStorage.getItem("UserTrackSearchInput");
     console.log(randomizedOffset);
     fetch(("https://api.spotify.com/v1/search?q=remaster%2520genre%3A" + userInput + "&type=track&limit=5&offset=" + randomizedOffset), tracksRequestInfo)
@@ -87,7 +87,7 @@ export default function App({ Component, pageProps }: AppProps) {
     .then(jsonData => 
       { 
         //Inserting data into local object ref (responseData).
-        console.log("Data Fetched!")
+        console.log(jsonData)
         //Track 1
         responseData.current.track1.Artist = jsonData.tracks?.items[0].artists[0].name;
         responseData.current.track1.SongName = jsonData.tracks?.items[0].name;
