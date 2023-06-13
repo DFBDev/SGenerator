@@ -63,7 +63,7 @@ const SearchResultPage: NextPage = () => {
                         </div>
                         <div className={styles.trackInfoContainer}>
                             <h1 className={styles.tracksH1}>{tempStoredSongsRaw.track1.SongName}</h1>
-                            <h2 className={styles.tracksH2}>{tempStoredSongsRaw.track1!.Artist}</h2>
+                            <h2 className={styles.tracksH2}>{tempStoredSongsRaw.track1.Artist}</h2>
                         </div>
                         <div className={styles.tracksTools}>
                             <button className={styles.sampleButton} onClick={() =>
