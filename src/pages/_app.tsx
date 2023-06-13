@@ -135,27 +135,22 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setTimeout(() => 
     {
-    localStorage.clear();
-    localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
-    const searchButton = document.querySelector('#searchButton');
-    searchButton?.addEventListener('click', songSearchQuery);
-    fetch('https://accounts.spotify.com/api/token', authenticationInfo)
-    .then(res => res.json())
-    .then(jsonData => {
-      access_key.current = jsonData.access_token;
-      refresh_key.current = jsonData.refresh_token;
-      console.log(access_key.current + " : " + refresh_key.current);
-      console.log(jsonData + ": API RES SUCCESS 200");
-      localStorage.setItem("apiValid", "!Valid");
-    })
-    .catch(response => {
-      console.error(response)
-      console.log(access_key.current + " : " + refresh_key.current);
-      fetch('https://accounts.spotify.com/api/token', refreshAuthenticationInfo)
+      localStorage.clear();
+      localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
+      const searchButton = document.querySelector('#searchButton');
+      searchButton?.addEventListener('click', songSearchQuery);
+      fetch('https://accounts.spotify.com/api/token', authenticationInfo)
       .then(res => res.json())
-      .then(jsonData => {access_key.current = jsonData.access_token, refresh_key.current = jsonData.refresh_token});
-    });
-  }, 2000)
+      .then(jsonData => {
+        access_key.current = jsonData.access_token;
+        refresh_key.current = jsonData.refresh_token;
+      })
+      .catch(response => {
+        fetch('https://accounts.spotify.com/api/token', refreshAuthenticationInfo)
+        .then(res => res.json())
+        .then(jsonData => {access_key.current = jsonData.access_token, refresh_key.current = jsonData.refresh_token});
+      });
+    }, 2000)
   });
 
   //Coupled with preloader component, as well as consistent state via useRef.
