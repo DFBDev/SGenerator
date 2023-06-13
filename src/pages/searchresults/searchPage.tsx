@@ -6,23 +6,70 @@ import { useState, useRef } from "react";
 
 const SearchResultPage: NextPage = () => { 
 
-    const [tempStoredSongsRaw, setTSSS] = useState(JSON.parse(localStorage?.getItem("fetchedSongs")!));
+    let responseData = useRef({
+        track1: {
+          Artist: "",
+          SongName: "",
+          ImageURL: "",
+          SongURL: "",
+          AudioSampleURL: ""
+        },
+        track2:{
+          Artist: "",
+          SongName: "",
+          ImageURL: "",
+          SongURL: "",
+          AudioSampleURL: ""
+        },
+        track3:{
+          Artist: "",
+          SongName: "",
+          ImageURL: "",
+          SongURL: "",
+          AudioSampleURL: ""
+        },
+        track4:{
+          Artist: "",
+          SongName: "",
+          ImageURL: "",
+          SongURL: "",
+          AudioSampleURL: ""
+        },
+        track5:{
+          Artist: "",
+          SongName: "",
+          ImageURL: "",
+          SongURL: "",
+          AudioSampleURL: ""
+        }
+      });
+
+    
+    const [tempStoredSongsRaw, setTSSS] = useState(responseData.current);
+
+    if (typeof window !== 'undefined'){
+        setTSSS(JSON.parse(localStorage?.getItem("fetchedSongs")!));
+    }
 
     //Fetching/Parsing JSON results from Local Storage and applying it to state to
     //keep in sync with Local Storage (with limiter to prevent unlimited rerendering).
 
     const dataUpdate = () => {
-        let updatedLocalStorage = JSON.parse(localStorage?.getItem("fetchedSongs")!);
+        if (typeof window !== 'undefined'){
+            let updatedLocalStorage = JSON.parse(localStorage?.getItem("fetchedSongs")!);
 
-        if (tempStoredSongsRaw.track1.Artist !== updatedLocalStorage.track1.Artist ){
-            setTSSS(updatedLocalStorage);
-            console.log("Rerendered!")
+            if (tempStoredSongsRaw.track1.Artist !== updatedLocalStorage.track1.Artist ){
+                setTSSS(updatedLocalStorage);
+                console.log("Rerendered!")
+            }
         }
     };
 
     const refreshSongs = () => {
-        setTSSS(JSON.parse(localStorage?.getItem("fetchedSongs")!));
-        console.log("Testing!")
+        if (typeof window !== 'undefined'){
+            setTSSS(JSON.parse(localStorage?.getItem("fetchedSongs")!));
+            console.log("Testing!")
+        }   
     };
 
     const songSample1 = new Audio(tempStoredSongsRaw.track1!.AudioSampleURL);
@@ -43,7 +90,7 @@ const SearchResultPage: NextPage = () => {
             <div className={styles.searchResultPageCover}>
                 <nav className={styles.navBar}>
                     <Link href={"../"}>
-                        <button className={styles.backButton} onClick={() => localStorage?.clear()}>
+                        <button className={styles.backButton} onClick={() => {if(typeof window !== 'undefined'){localStorage?.clear()}}}>
                             <Image className={styles.backButtonGraphic} src={"/images/Arrow 1.svg"} width={20} height={20} alt="Back Arrow"></Image>
                         </button>
                     </Link>
