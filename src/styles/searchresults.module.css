@@ -25,6 +25,15 @@
 
 /* ------ Outer Elements (none mid container) ------ */
 
+.errorNotif{
+    color:white;
+    width:20%;
+    min-width:250px;
+    margin-top:2%;
+    text-align:center;
+    opacity:0.8;
+}
+
 .searchResultPageCover{
     display:flex;
     justify-content:center;
@@ -37,8 +46,8 @@
 .navBar{
     display:flex;
     justify-content:space-between;
+    align-items:center;
     width:100%;
-    margin-bottom:auto;
 }
 .backButton{
     display:flex;
@@ -76,14 +85,15 @@
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    position:absolute;
     gap:1.1rem;
     width:30vw;
     height:86vh;
-    min-width:350px;
-    max-height:600px;
-    max-width:400px;
+    min-width:320px;
+    max-height:650px;
+    max-width:500px;
     background-color: rgba(0,0,0,0.1);
+    margin-top:auto;
+    margin-bottom:auto;
 }
 .trackContainerMid{
     display:flex;
@@ -92,7 +102,7 @@
     background-color: rgba(0,0,0,0.1);
 }
 .trackArtworkContainer{
-    width:4.4rem;
+    min-width:4.4rem;
     height:4.4rem;
     margin:auto 6% auto 4%;
     border-color:#3A8528;
@@ -108,22 +118,23 @@
     align-items:left;
 }
 .tracksH1{
-    width:60%;
-    font-size:1.2rem;
+    width:96%;
+    font-size:0.9rem;
     color:#579847;
 }
 .tracksH2{
     font-size:0.8rem;
     width:60%;
     color:#A6C29F;
-    margin-left:0.45%;
+    margin-left:0.45%; 
 }
 .tracksTools{
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction: column;
-    width:14%;
+    width:10%;
+    margin-right:0.5rem;
 }
 .sampleButton{
     display:flex;
@@ -132,8 +143,8 @@
     border-color:var(--primary-accent);
     border-radius:100%;
     border-width:1px;
-    width:2rem;
-    height:2rem;
+    width:1.8rem;
+    height:1.8rem;
     margin-bottom:20%;
     transition:all 0.2s ease-in-out;
 }

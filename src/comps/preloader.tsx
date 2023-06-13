@@ -8,11 +8,10 @@ export const LoadingWindow = (props : {status : string}) => {
     const changeLoadingPercentage = () => {
         if(loadingPercentage != 100){
             setLoadingPercentage(loadingPercentage + 1);
-        }
-    }  
+        };
+    };
 
     setTimeout(changeLoadingPercentage, 55);
-    console.log(props.status + "check");
     
     return(
         <>

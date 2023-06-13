@@ -14,6 +14,7 @@
     background-color: var(--pop-up-bgcolor);
     backdrop-filter: blur(10px);
     z-index:9;
+    overflow:hidden;
 }
 .supportMidBoxContainer{
     display:flex;

@@ -29,11 +29,11 @@ export default function Home() {
         </h2>
         <hr className={styles.hrMid}></hr>
         <form className={styles.searchFormContainerMid}>
-          <input className={styles.searchBarMid} type="text" placeholder='Enter artist, song or time-period!'/>
+          <input className={styles.searchBarMid} type="text" placeholder='Enter artist, song or time-period!' onChange={data => {localStorage.setItem("UserTrackSearchInput", data.currentTarget.value)}}/>
           <span className={styles.lockOnEffect}></span>
           <label htmlFor="searchInput"></label>
-          <Link href={"/searchresults/searchPage"} className={styles.searchButtonMid}>
-            <button type="submit">
+          <Link href={"/searchresults/searchPage"} className={styles.searchButtonMid} id='searchButton'>
+            <button type="submit" className='searchButton'>
               <div className={styles.buttonGraphicMid}></div>
             </button>
           </Link>
@@ -44,4 +44,4 @@ export default function Home() {
       <InfoWindow status={overlayStatus}/>
     </main>
   )
-}
+};

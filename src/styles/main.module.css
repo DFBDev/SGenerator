@@ -45,6 +45,20 @@
     }
 }
 
+@keyframes apiLOAD {
+    0%{
+        opacity:0.3;
+        pointer-events: none;
+    }
+    90%{
+        opacity:0.3;
+        pointer-events: none;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
 /* ------ Main Home Heading (support button & title) ------ */
 
 .header{
@@ -172,6 +186,7 @@
     margin-right:1%;
     transition:all 0.2s ease-in-out;
     overflow: hidden;
+    animation: apiLOAD 4s ease-in-out;
 }
 .searchButtonMid::before{
     content:'';
@@ -191,7 +206,7 @@
 .searchButtonMid:hover::before{
     opacity:1;
     background-color:rgba(71, 224, 68, 0.6);
-    animation:selectBackgroundFill 0.6s ease-in-out;
+    animation:selectBackgroundFill 0.4s ease-in-out;
     border-radius:0.3rem;
 }
 .buttonGraphicMid{
