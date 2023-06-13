@@ -149,7 +149,7 @@ export default function App({ Component, pageProps }: AppProps) {
         .then(res => res.json())
         .then(jsonData => {access_key.current = jsonData.access_token, refresh_key.current = jsonData.refresh_token});
       });
-    }, 5000)
+    }, 1000)
   });
 
   //Coupled with preloader component, as well as consistent state via useRef.
