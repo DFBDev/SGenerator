@@ -44,8 +44,68 @@ const SearchResultPage: NextPage = () => {
         }
       });
 
-    
     const [tempStoredSongsRaw, setTSSS] = useState(responseData.current);
+
+    var tracksRequestInfo = {
+        method: 'GET', 
+        headers: {
+          'Authorization': "Bearer " + localStorage.getItem("A_K")
+        }
+      };
+
+    const songSearchQuery = () => {
+        let randomizedOffset = Math.floor(Math.random() * 100).toString();
+        let userInput = localStorage.getItem("UserTrackSearchInput");
+        console.log(randomizedOffset);
+        fetch(("https://api.spotify.com/v1/search?q=remaster%2520genre%3A" + userInput + "&type=track&limit=5&offset=" + randomizedOffset), tracksRequestInfo)
+        .then(res => res.json())
+        .then(jsonData => 
+          { 
+            //Inserting data into local object ref (responseData).
+            console.log(jsonData)
+            //Track 1
+            responseData.current.track1.Artist = jsonData.tracks?.items[0].artists[0].name;
+            responseData.current.track1.SongName = jsonData.tracks?.items[0].name;
+            responseData.current.track1.ImageURL = jsonData.tracks?.items[0].album.images[2].url;
+            responseData.current.track1.SongURL = jsonData.tracks?.items[0].external_urls.spotify;
+            responseData.current.track1.AudioSampleURL = jsonData.tracks?.items[0].preview_url;
+    
+            //Track 2
+            responseData.current.track2.Artist = jsonData.tracks?.items[1].artists[0].name;
+            responseData.current.track2.SongName = jsonData.tracks?.items[1].name;
+            responseData.current.track2.ImageURL = jsonData.tracks?.items[1].album.images[2].url;
+            responseData.current.track2.SongURL = jsonData.tracks?.items[1].external_urls.spotify;
+            responseData.current.track2.AudioSampleURL = jsonData.tracks?.items[1].preview_url;
+    
+            //Track 3
+            responseData.current.track3.Artist = jsonData.tracks?.items[2].artists[0].name;
+            responseData.current.track3.SongName = jsonData.tracks?.items[2].name;
+            responseData.current.track3.ImageURL = jsonData.tracks?.items[2].album.images[2].url;
+            responseData.current.track3.SongURL = jsonData.tracks?.items[2].external_urls.spotify;
+            responseData.current.track3.AudioSampleURL = jsonData.tracks?.items[2].preview_url;
+    
+            //Track 4
+            responseData.current.track4.Artist = jsonData.tracks?.items[3].artists[0].name;
+            responseData.current.track4.SongName = jsonData.tracks?.items[3].name;
+            responseData.current.track4.ImageURL = jsonData.tracks?.items[3].album.images[2].url;
+            responseData.current.track4.SongURL = jsonData.tracks?.items[3].external_urls.spotify;
+            responseData.current.track4.AudioSampleURL = jsonData.tracks?.items[3].preview_url;
+    
+            //Track 5
+            responseData.current.track5.Artist = jsonData.tracks?.items[4].artists[0].name;
+            responseData.current.track5.SongName = jsonData.tracks?.items[4].name;
+            responseData.current.track5.ImageURL = jsonData.tracks?.items[4].album.images[2].url;
+            responseData.current.track5.SongURL = jsonData.tracks?.items[4].external_urls.spotify;
+            responseData.current.track5.AudioSampleURL = jsonData.tracks?.items[4].preview_url;
+    
+            //Inserting JSON data into Local Storage.
+            
+            localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
+            setTSSS(JSON.parse(JSON.stringify(responseData.current)));
+          }
+        )
+        .catch(error => {console.log(error)});
+      };
 
     //Fetching/Parsing JSON results from Local Storage and applying it to state to
     //keep in sync with Local Storage (with limiter to prevent unlimited rerendering).
@@ -101,6 +161,16 @@ const SearchResultPage: NextPage = () => {
                         <Image className={styles.refreshButtonGraphic} src={"/images/Arrow 2.svg"} width={30} height={30} alt="Refresh Arrow"></Image>
                     </button>
                 </nav>
+                {tempStoredSongsRaw.track1.Artist != "" && (
+                        <div className={styles.reinputContainer}>
+                            <input className={styles.reinputSearchField} type={"text"} placeholder={"Check out some other songs!"} onChange={data => {
+                            localStorage?.setItem("UserTrackSearchInput", data.currentTarget.value)
+                            }}></input>
+                            <button className={styles.reinputButton} onClick={songSearchQuery}>
+                                <Image src={"/images/Arrow 2.svg"} width={22} height={22} alt={"Search Again"}></Image>
+                            </button>
+                        </div>
+                )}
                 <section className={styles.resultsContainerMid}>
                     <article className={styles.trackContainerMid}>
                         <div className={styles.trackArtworkContainer}>

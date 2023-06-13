@@ -23,6 +23,14 @@
     }
 }
 
+@keyframes extendX {
+    0%{
+        transform:scaleX(0);
+    }
+    100%{
+        transform:scaleX(1);
+    }
+}
 /* ------ Outer Elements (none mid container) ------ */
 
 .errorNotif{
@@ -67,6 +75,39 @@
 .backButtonGraphic{
     transition:all 0.2s ease-in-out;
 }
+.reinputContainer{
+    display:flex;
+    justify-content: space-between;
+    width:24vw;
+    margin-top:10%;
+    margin-left:1%;
+    min-width:280px;
+    max-width:400px;
+}
+.reinputSearchField{
+    width:86%;
+    padding:2%;
+    padding-left:3%;
+    caret-color: #41bc22;
+    border-radius:0.8rem;
+    backdrop-filter:blur(4px);
+    background-color:rgba(175, 170, 170, 0.1);
+    color:var(--secondary-accent);
+    outline:none;
+}
+.reinputSearchField::placeholder{
+    color:#A6C29F;
+    opacity:0.6;
+}
+.reinputButton{
+    margin-right:auto;
+    margin-left:auto;
+    transition:all 0.2s ease-in-out;
+    border-bottom-color:rgba(34, 236, 30, 0.75);
+}
+.reinputButton:hover{
+   transform:scale(1.2);
+}
 .refreshButton{
     width:2.5rem;
     height:2.5rem;
@@ -92,7 +133,7 @@
     max-height:650px;
     max-width:500px;
     background-color: rgba(0,0,0,0.1);
-    margin-top:auto;
+    margin-top:2%;
     margin-bottom:auto;
 }
 .trackContainerMid{

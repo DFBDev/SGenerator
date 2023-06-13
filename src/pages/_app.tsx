@@ -128,6 +128,7 @@ export default function App({ Component, pageProps }: AppProps) {
         localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
       }
     )
+    .catch(error => {console.log(error)});
   };
 
   //Setting token and adding Event Listener on initial site render.
@@ -143,13 +144,14 @@ export default function App({ Component, pageProps }: AppProps) {
       .then(jsonData => {
         access_key.current = jsonData.access_token;
         refresh_key.current = jsonData.refresh_token;
+        localStorage.setItem("A_K", access_key.current);
       })
       .catch(response => {
         fetch('https://accounts.spotify.com/api/token', refreshAuthenticationInfo)
         .then(res => res.json())
         .then(jsonData => {access_key.current = jsonData.access_token, refresh_key.current = jsonData.refresh_token});
       });
-    }, 1000)
+    }, 200)
   });
 
   //Coupled with preloader component, as well as consistent state via useRef.
