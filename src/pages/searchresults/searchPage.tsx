@@ -72,11 +72,13 @@ const SearchResultPage: NextPage = () => {
         }   
     };
 
-    const songSample1 = new Audio(tempStoredSongsRaw.track1!.AudioSampleURL);
-    const songSample2 = new Audio(tempStoredSongsRaw.track2!.AudioSampleURL);
-    const songSample3 = new Audio(tempStoredSongsRaw.track3!.AudioSampleURL);
-    const songSample4 = new Audio(tempStoredSongsRaw.track4!.AudioSampleURL);
-    const songSample5 = new Audio(tempStoredSongsRaw.track5!.AudioSampleURL);
+    if (typeof window !== 'undefined'){
+        var songSample1 = new Audio(tempStoredSongsRaw.track1!.AudioSampleURL);
+        var songSample2 = new Audio(tempStoredSongsRaw.track2!.AudioSampleURL);
+        var songSample3 = new Audio(tempStoredSongsRaw.track3!.AudioSampleURL);
+        var songSample4 = new Audio(tempStoredSongsRaw.track4!.AudioSampleURL);
+        var songSample5 = new Audio(tempStoredSongsRaw.track5!.AudioSampleURL);
+    }
 
     const ss1Status = useRef("Paused");
     const ss2Status = useRef("Paused");
