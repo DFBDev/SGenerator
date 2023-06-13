@@ -6,14 +6,13 @@ import { useState, useRef } from "react";
 
 const SearchResultPage: NextPage = () => { 
 
-    const [tempStoredSongsRaw, setTSSS] = useState(JSON.parse(localStorage.getItem("fetchedSongs")!));
-    let playbackStatus = useRef("Paused");
+    const [tempStoredSongsRaw, setTSSS] = useState(JSON.parse(localStorage?.getItem("fetchedSongs")!));
 
     //Fetching/Parsing JSON results from Local Storage and applying it to state to
     //keep in sync with Local Storage (with limiter to prevent unlimited rerendering).
 
     const dataUpdate = () => {
-        let updatedLocalStorage = JSON.parse(localStorage.getItem("fetchedSongs")!);
+        let updatedLocalStorage = JSON.parse(localStorage?.getItem("fetchedSongs")!);
 
         if (tempStoredSongsRaw.track1.Artist !== updatedLocalStorage.track1.Artist ){
             setTSSS(updatedLocalStorage);
@@ -22,7 +21,7 @@ const SearchResultPage: NextPage = () => {
     };
 
     const refreshSongs = () => {
-        setTSSS(JSON.parse(localStorage.getItem("fetchedSongs")!));
+        setTSSS(JSON.parse(localStorage?.getItem("fetchedSongs")!));
         console.log("Testing!")
     };
 
@@ -44,7 +43,7 @@ const SearchResultPage: NextPage = () => {
             <div className={styles.searchResultPageCover}>
                 <nav className={styles.navBar}>
                     <Link href={"../"}>
-                        <button className={styles.backButton} onClick={() => localStorage.clear()}>
+                        <button className={styles.backButton} onClick={() => localStorage?.clear()}>
                             <Image className={styles.backButtonGraphic} src={"/images/Arrow 1.svg"} width={20} height={20} alt="Back Arrow"></Image>
                         </button>
                     </Link>
