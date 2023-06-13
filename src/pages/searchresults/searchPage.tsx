@@ -45,23 +45,14 @@ const SearchResultPage: NextPage = () => {
       });
 
     const [tempStoredSongsRaw, setTSSS] = useState(responseData.current);
-    
-    const fetchKey = () => {
-        if (typeof window !== 'undefined'){
-            return(
-                localStorage.getItem("A_K")
-            )
-        }
-    };
-
-    var tracksRequestInfo = {
-        method: 'GET', 
-        headers: {
-          'Authorization': "Bearer " + {fetchKey}
-        }
-      };
 
     const songSearchQuery = () => {
+        var tracksRequestInfo = {
+            method: 'GET', 
+            headers: {
+              'Authorization': "Bearer " + localStorage.getItem("A_K")
+            }
+        };
         let randomizedOffset = Math.floor(Math.random() * 100).toString();
         let userInput = localStorage.getItem("UserTrackSearchInput");
         console.log(randomizedOffset);
