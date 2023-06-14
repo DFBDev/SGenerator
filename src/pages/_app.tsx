@@ -7,8 +7,8 @@ export default function App({ Component, pageProps }: AppProps) {
   
   //Satisfying prerequisites for query/token management.
 
-  const access_key = useRef("");
-  const refresh_key = useRef("");
+  let access_key = useRef("");
+  let refresh_key = useRef("");
 
   var authenticationInfo = {
     method: 'POST',
@@ -32,14 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   //Creating function query with required method and header info.
-
-  var tracksRequestInfo = {
-    method: 'GET', 
-    headers: {
-      'Authorization': "Bearer " + access_key.current
-    }
-  };
-
+  
   let responseData = useRef({
     track1: {
       Artist: "",
@@ -79,6 +72,12 @@ export default function App({ Component, pageProps }: AppProps) {
   });
   
   const songSearchQuery = () => {
+    var tracksRequestInfo = {
+      method: 'GET', 
+      headers: {
+        'Authorization': "Bearer " + access_key.current
+      }
+    };  
     let randomizedOffset = Math.floor(Math.random() * 100).toString();
     let userInput = localStorage.getItem("UserTrackSearchInput");
     console.log(randomizedOffset);

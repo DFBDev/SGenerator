@@ -136,14 +136,12 @@
 .searchFormContainerMid{
     display:flex;
     justify-content:left;
-    margin-left:auto;
-    margin-right:auto;
-    min-width:358px;
+    min-width:350px;
     max-width:580px;
-    width:100%;
+    width:52vw;
 }
 .searchBarMid{
-    width:48vw;
+    width:42vw;
     height:2.5rem;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius:0.3rem;
@@ -153,7 +151,7 @@
     outline:none;
     caret-color: #41bc22;
     color:var(--secondary-accent);
-    min-width:300px;
+    min-width:280px;
     max-width:501px;
     backdrop-filter:blur(4px);
 }
@@ -170,7 +168,12 @@
 }
 .searchBarMid:focus + .lockOnEffect {
     animation:selectFadeIn 0.6s ease-in-out;
+    padding-left:2%;
     opacity:1;
+    min-width:280px;
+    width:42vw;
+    max-width:501px;
+    border-radius:0.3rem;
 }
 .searchButtonMid{
     display:flex;
@@ -178,15 +181,14 @@
     align-items:center;
     width:10%;
     min-width:60px;
-    margin-left:auto;
     background-color: var(--search-button-color);
     color:var(--primary-accent);
     border-radius:0.3rem;
-    margin-left:auto;
-    margin-right:1%;
     transition:all 0.2s ease-in-out;
     overflow: hidden;
     animation: apiLOAD 4s ease-in-out;
+    margin-left:auto;
+    margin-right:auto;
 }
 .searchButtonMid::before{
     content:'';

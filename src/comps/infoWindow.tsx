@@ -35,7 +35,7 @@ export const InfoWindow = (props : {status : string}) : JSX.Element => {
                         </p>
                         <hr className={styles.supportInformationLineDivider}></hr>
                         <p className={styles.supportInformationParagraph}>
-                            No account required. Content is generated via Spotify API. If you encounter any errors when generating songs, come back here and retry!<br/>
+                            No account required. Content is generated via Spotify API. If you encounter any errors when generating songs, come back home and retry!<br/>
                             <a className={styles.supportInformationAnc} href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API Docs</a>
                         </p>
                     </article>

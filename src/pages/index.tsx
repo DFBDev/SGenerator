@@ -24,7 +24,7 @@ export default function Home() {
       <section className={styles.homeMainMidContainer}>
         <h1 className={styles.mainHeadingOneMid}>Having a hard time finding new songs?</h1>
         <h2 className={styles.mainHeadingTwoMid}>
-          Enter any artist, time-period or genre for a randomized assortment of
+          Enter any artist or genre for a randomized assortment of
           songs and podcasts!
         </h2>
         <hr className={styles.hrMid}></hr>
