@@ -27,6 +27,10 @@ export const LoadingWindow = (props : {status : string}) => {
                             </div>
                             <span className={styles.preloaderPercentage}>{loadingPercentage}%</span>
                         </div>
+                        <span className={styles.updateText}>
+                            Please note that the site will be changing names to "radiohill" soon.
+                            The url will be the same, instead "ssuggestions" will be replaced with "radiohill".
+                         </span>
                     </section>
                 </div>
             )}

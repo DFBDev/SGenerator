@@ -16,7 +16,3 @@ Features:
 Next Changes:
 
 -Logo change.
--Sample track feature.
-
-Other Ideas: 
--Search result quick switch searchbar.

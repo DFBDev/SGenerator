@@ -73,6 +73,9 @@
     font-family:"Roboto Mono";
     color: var(--primary-accent);
 }
+.HMHTLSpan{
+    color:rgb(58, 241, 52);
+}
 .supportButtonTR{
     display:flex;
     justify-content:center;

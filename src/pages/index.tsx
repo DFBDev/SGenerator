@@ -13,7 +13,7 @@ export default function Home() {
       <header className={styles.header}>
         <div className='flex justify-center items-center ml-6 mt-6'>
           <Image src={"/images/spotify.png"} width={40} height={40} alt="Spotify Logo"></Image>
-          <h1 className={styles.homeMainHeadingTL}>Suggestions</h1>
+          <h1 className={styles.homeMainHeadingTL}>Radio<span className={styles.HMHTLSpan}>Hill</span></h1>
         </div>
         <button className={styles.supportButtonTR} onClick={() => {if (overlayStatus == "inactive" || overlayStatus == "initialInactive")
         {setOS("active")} else{setOS("inactive")}}}>
