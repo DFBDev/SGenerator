@@ -18,9 +18,9 @@ export const LoadingWindow = (props : {status : string}) => {
             {props.status == "active" && (
                 <div className={styles.preloaderCover}>
                     <section className={styles.preloaderContent}>
-                        <Image className={styles.preloaderSpotifyImage} src={"/images/spotify.png"} width={80} height={80} alt={"Spotify logo."}></Image>
+                        <Image className={styles.preloaderSpotifyImage} src={"/images/Group 3.svg"} width={120} height={120} alt={"Spotify logo."}></Image>
                         <hr className={styles.preloaderDivider}></hr>
-                        <h1 className={styles.preloaderHeader}>Spotify© Suggestions</h1>
+                        <h1 className={styles.preloaderHeader}>Radio Hill</h1>
                         <div className={styles.preloaderBarContainer}>
                             <div className={styles.preloaderLoadingBar}>
                                 <div className={styles.preloaderFill}></div>
