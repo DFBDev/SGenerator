@@ -157,7 +157,7 @@
     margin-top:1.5rem;
     position:absolute;
     border-radius:0.8rem;
-    background: linear-gradient(90deg, rgba(75, 200, 42, 0.75) 0%, rgba(217, 217, 217, 0.00) 100%);
+    background: linear-gradient(270deg, rgba(75, 200, 42, 0.6) 0%, rgba(217, 217, 217, 0.00) 100%);
     transition:all 0.3s ease-in-out;
     opacity:0;
 }
