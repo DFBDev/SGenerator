@@ -36,12 +36,6 @@
     }
 }
 
-.updateText{
-    max-width:300px;
-    text-align:center;
-    margin-top:10%;
-    color:var(--primary-accent);
-}
 /* ------ Initial Loading Screen styles ------ */
 
 .preloaderCover{
