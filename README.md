@@ -15,4 +15,8 @@ Features:
 
 Next Changes:
 
--Logo change.
+-Domain name change.
+-Sample playback button improvements.
+-Double check spotify imagery copyright.
+-Accessibility improvements.
+-Merge search bar with result box & change to magnifying glass instead of refresh arrow.

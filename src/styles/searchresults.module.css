@@ -1,5 +1,13 @@
 @import "/globals.css";
 
+@media screen and (max-width: 1280px){
+    .animationMarker{
+        display:none !important;
+    }
+    .animationMarker2{
+        display:none !important;
+    }
+}
 /* ------ Animations ------ */
 
 @keyframes shake {
@@ -56,6 +64,7 @@
     justify-content:space-between;
     align-items:center;
     width:100%;
+    margin-top:0.2rem;
 }
 .backButton{
     display:flex;
@@ -77,36 +86,46 @@
 }
 .reinputContainer{
     display:flex;
-    justify-content: space-between;
-    width:24vw;
+    justify-content:center;
+    align-items:center;
+    width:30vw;
     margin-top:10%;
-    margin-left:1%;
-    min-width:280px;
-    max-width:400px;
+    min-width:320px;
+    max-width:500px;
+    height:20vh;
+    max-height:80px;
+    min-height:50px;
+    background-color: rgba(0,0,0,0.1);
 }
 .reinputSearchField{
-    width:86%;
+    width:74%;
     padding:2%;
     padding-left:3%;
     caret-color: #41bc22;
-    border-radius:0.8rem;
+    border-top-left-radius:0.8rem;
+    border-bottom-left-radius:0.8rem;
     backdrop-filter:blur(4px);
     background-color:rgba(175, 170, 170, 0.1);
     color:var(--secondary-accent);
     outline:none;
+    max-height:40px;
+    margin-left:auto;
+    margin-top:5%;
+    z-index:2;
 }
 .reinputSearchField::placeholder{
     color:#A6C29F;
     opacity:0.6;
 }
 .reinputButton{
+    margin-top:5%;
     margin-right:auto;
-    margin-left:auto;
     transition:all 0.2s ease-in-out;
-    border-bottom-color:rgba(34, 236, 30, 0.75);
-}
-.reinputButton:hover{
-   transform:scale(1.2);
+    background-color: rgb(0, 61, 8);
+    padding:2%;
+    border-top-right-radius:0.8rem;
+    border-bottom-right-radius:0.8rem;
+    z-index:2;
 }
 .refreshButton{
     width:2.5rem;
@@ -117,6 +136,37 @@
 }
 .refreshButtonGraphic{
     transition:all 0.2s ease-in-out;
+}
+.animationMarker{
+    width:30%;
+    height:10%;
+    max-width:40px;
+    max-height:40px;
+    z-index:3;
+    margin-left:23rem;
+    margin-top:1.7rem;
+    position:absolute;
+    cursor:pointer;
+}
+.animationMarker2{
+    width:30%;
+    height:10%;
+    max-width:408px;
+    max-height:40px;
+    z-index:1;
+    margin-top:1.5rem;
+    position:absolute;
+    border-radius:0.8rem;
+    background: linear-gradient(90deg, rgba(75, 200, 42, 0.75) 0%, rgba(217, 217, 217, 0.00) 100%);
+    transition:all 0.3s ease-in-out;
+    opacity:0;
+}
+.animationMarker:hover ~ .animationMarker2{
+   opacity:1;
+}
+.animationMarker:active ~ .animationMarker2{
+    background-color: rgba(75, 200, 42, 0.75);
+    transition:all 0.05s ease-in-out !important;
 }
 
 /* ------ Middle Results Container ------ */
@@ -133,7 +183,6 @@
     max-height:650px;
     max-width:500px;
     background-color: rgba(0,0,0,0.1);
-    margin-top:2%;
     margin-bottom:auto;
 }
 .trackContainerMid{
@@ -210,10 +259,6 @@
     background-color:rgba(3, 34, 7, 0.6);
     box-shadow: 0px 0px 3px 2px rgba(67, 231, 64, 0.75) inset;
     border-color:#5ddc3d;
-}
-.sampleButton:hover .sampleButtonGraphic{
-    border-left-color:#5ddc3d;
-    transform:scale(0.7);
 }
 .sampleButton:hover{
     transform:scale(1.1);

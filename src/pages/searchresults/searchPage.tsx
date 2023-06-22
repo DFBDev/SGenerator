@@ -134,7 +134,7 @@ const SearchResultPage: NextPage = () => {
         var songSample4 = new Audio(tempStoredSongsRaw.track4!.AudioSampleURL);
         var songSample5 = new Audio(tempStoredSongsRaw.track5!.AudioSampleURL);
     }
-
+    
     const ss1Status = useRef("Paused");
     const ss2Status = useRef("Paused");
     const ss3Status = useRef("Paused");
@@ -162,12 +162,14 @@ const SearchResultPage: NextPage = () => {
                 </nav>
                 {tempStoredSongsRaw.track1.Artist != "" && (
                         <div className={styles.reinputContainer}>
+                            <div className={styles.animationMarker} onClick={songSearchQuery}></div>
                             <input className={styles.reinputSearchField} type={"text"} placeholder={"Check out some other songs!"} onChange={data => {
                             localStorage?.setItem("UserTrackSearchInput", data.currentTarget.value)
                             }}></input>
-                            <button className={styles.reinputButton} onClick={songSearchQuery}>
-                                <Image src={"/images/Arrow 2.svg"} width={22} height={22} alt={"Search Again"}></Image>
-                            </button>
+                            <div className={styles.reinputButton}>
+                                <Image src={"/images/refreshSearch.svg"} width={22} height={22} alt={"Search Again"}></Image>
+                            </div>
+                            <button className={styles.animationMarker2}></button>
                         </div>
                 )}
                 <section className={styles.resultsContainerMid}>
@@ -201,7 +203,7 @@ const SearchResultPage: NextPage = () => {
                                     ss1Status.current = "Paused";
                                   }
                                   }}>
-                                <div className={styles.sampleButtonGraphic}></div>
+                                <Image className={"mr-0.5"} src={"/images/Group 4.svg"} height={12} width={12} alt={"Playback Button"}></Image>
                             </button>
                             <a href={tempStoredSongsRaw.track1!.SongURL} target={"_blank"}>
                                 <Image src={"/images/spotify.png"} width={28} height={28} alt="Spotify Logo"></Image>
@@ -238,7 +240,7 @@ const SearchResultPage: NextPage = () => {
                                       ss2Status.current = "Paused";
                                     }
                                 }}>
-                                <div className={styles.sampleButtonGraphic}></div>
+                                <Image className={"mr-0.5"} src={"/images/Group 4.svg"} height={12} width={12} alt={"Playback Button"}></Image>
                             </button>
                             <a href={tempStoredSongsRaw.track2.SongURL} target={"_blank"}>
                                 <Image src={"/images/spotify.png"} width={28} height={28} alt="Spotify Logo"></Image>
@@ -275,7 +277,7 @@ const SearchResultPage: NextPage = () => {
                                         ss3Status.current = "Paused";
                                     }
                                 }}>
-                                <div className={styles.sampleButtonGraphic}></div>
+                                <Image className={"mr-0.5"} src={"/images/Group 4.svg"} height={12} width={12} alt={"Playback Button"}></Image>
                             </button>
                             <a href={tempStoredSongsRaw.track3.ImageURL} target={"_blank"}>
                                 <Image src={"/images/spotify.png"} width={28} height={28} alt="Spotify Logo"></Image>
@@ -312,7 +314,7 @@ const SearchResultPage: NextPage = () => {
                                         ss4Status.current = "Paused";
                                     }
                                 }}>
-                                <div className={styles.sampleButtonGraphic}></div>
+                                <Image className={"mr-0.5"} src={"/images/Group 4.svg"} height={12} width={12} alt={"Playback Button"}></Image>
                             </button>
                             <a href={tempStoredSongsRaw.track4.SongURL} target={"_blank"}>
                                 <Image src={"/images/spotify.png"} width={28} height={28} alt="Spotify Logo"></Image>
@@ -349,7 +351,7 @@ const SearchResultPage: NextPage = () => {
                                         ss5Status.current = "Paused";
                                     }
                                 }}>
-                                <div className={styles.sampleButtonGraphic}></div>
+                                <Image className={"mr-0.5"} src={"/images/Group 4.svg"} height={12} width={12} alt={"Playback Button"}></Image>
                             </button>
                             <a href={tempStoredSongsRaw.track5.SongURL} target={"_blank"}>
                                 <Image src={"/images/spotify.png"} width={28} height={28} alt="Spotify Logo"></Image>
