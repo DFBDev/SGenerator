@@ -47,6 +47,7 @@ const SearchResultPage: NextPage = () => {
     const [tempStoredSongsRaw, setTSSS] = useState(responseData.current);
 
     const songSearchQuery = () => {
+        //Function for executing API request concurrent with current user input data.
         var tracksRequestInfo = {
             method: 'GET', 
             headers: {
@@ -61,7 +62,7 @@ const SearchResultPage: NextPage = () => {
         .then(jsonData => 
           { 
             //Inserting data into local object ref (responseData).
-            console.log(jsonData)
+            
             //Track 1
             responseData.current.track1.Artist = jsonData.tracks?.items[0].artists[0].name;
             responseData.current.track1.SongName = jsonData.tracks?.items[0].name;
@@ -141,6 +142,7 @@ const SearchResultPage: NextPage = () => {
     const ss4Status = useRef("Paused");
     const ss5Status = useRef("Paused");
 
+    //API delay to prevent unrendered data.
     setTimeout(dataUpdate, 300);
     
     return (

@@ -26,6 +26,7 @@
     }
 }
 @keyframes selectFadeIn {
+    /* Animation for search-bar lock-on effect */
     0%{
         max-height:300px;
         transform:scaleY(1.3) scaleX(1.02);
@@ -36,7 +37,9 @@
         opacity:1;
     }
 }
+
 @keyframes selectBackgroundFill {
+    /* Animation for onHover search-button */
     0%{
         transform:translateX(-90%)
     }
@@ -46,6 +49,7 @@
 }
 
 @keyframes apiLOAD {
+    /* Cooldown animation for search-button (prevent home page spam) */
     0%{
         opacity:0.3;
         pointer-events: none;
@@ -94,14 +98,6 @@
     font-size:1.3rem;
     color:var(--primary-accent);
     transition:all 0.3s ease-in-out;
-}
-.supportButtonTR:hover{
-    transform:scale(1.2);
-    color:#5ddc3d;
-    border-color:#5ddc3d;
-    background-color:rgba(1, 21, 4, 0.6);
-    box-shadow: 0px 0px 3px 2px rgba(67, 231, 64, 0.75) inset;
-    font-size:0.9rem;
 }
 
 /* ------ Middle Main Container (search bar, search button, headings, etc) ------ */
@@ -163,6 +159,21 @@
     max-width:501px;
     backdrop-filter:blur(4px);
 }
+.searchButtonMid{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:10%;
+    min-width:60px;
+    background-color: var(--search-button-color);
+    color:var(--primary-accent);
+    border-radius:0.3rem;
+    transition:all 0.2s ease-in-out;
+    overflow: hidden;
+    animation: apiLOAD 4s ease-in-out;
+    margin-left:auto;
+    margin-right:auto;
+}
 .midFooter{
     color:var(--secondary-accent);
     opacity:0.5;
@@ -182,21 +193,6 @@
     width:42vw;
     max-width:501px;
     border-radius:0.3rem;
-}
-.searchButtonMid{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:10%;
-    min-width:60px;
-    background-color: var(--search-button-color);
-    color:var(--primary-accent);
-    border-radius:0.3rem;
-    transition:all 0.2s ease-in-out;
-    overflow: hidden;
-    animation: apiLOAD 4s ease-in-out;
-    margin-left:auto;
-    margin-right:auto;
 }
 .searchButtonMid::before{
     content:'';
@@ -245,6 +241,14 @@
     box-shadow: 0px 0px 3px 0.5px rgba(34, 236, 30, 0.75);
     opacity:0;
     pointer-events:none;
+}
+.supportButtonTR:hover{
+    transform:scale(1.2);
+    color:#5ddc3d;
+    border-color:#5ddc3d;
+    background-color:rgba(1, 21, 4, 0.6);
+    box-shadow: 0px 0px 3px 2px rgba(67, 231, 64, 0.75) inset;
+    font-size:0.9rem;
 }
 
 /* ------ End of Styling ------ */

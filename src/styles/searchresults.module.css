@@ -113,10 +113,6 @@
     margin-top:5%;
     z-index:2;
 }
-.reinputSearchField::placeholder{
-    color:#A6C29F;
-    opacity:0.6;
-}
 .reinputButton{
     margin-top:5%;
     margin-right:auto;
@@ -160,13 +156,6 @@
     background: linear-gradient(270deg, rgba(75, 200, 42, 0.6) 0%, rgba(217, 217, 217, 0.00) 100%);
     transition:all 0.3s ease-in-out;
     opacity:0;
-}
-.animationMarker:hover ~ .animationMarker2{
-   opacity:1;
-}
-.animationMarker:active ~ .animationMarker2{
-    background-color: rgba(75, 200, 42, 0.75);
-    transition:all 0.05s ease-in-out !important;
 }
 
 /* ------ Middle Results Container ------ */
@@ -250,6 +239,17 @@
 
 /* ------ Pseudo Stylings ------ */
 
+.animationMarker:hover ~ .animationMarker2{
+    opacity:1;
+}
+ .animationMarker:active ~ .animationMarker2{
+     background-color: rgba(75, 200, 42, 0.75);
+     transition:all 0.05s ease-in-out !important;
+}
+.reinputSearchField::placeholder{
+    color:#A6C29F;
+    opacity:0.6;
+}
 .backButton:hover .backButtonGraphic{
     border-left-color:#5ddc3d;
     transform:scale(0.7);

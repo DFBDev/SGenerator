@@ -6,6 +6,7 @@ export const LoadingWindow = (props : {status : string}) => {
     const [loadingPercentage, setLoadingPercentage] = useState(0);
 
     const changeLoadingPercentage = () => {
+        //Changing loading percentage digits until 100.
         if(loadingPercentage != 100){
             setLoadingPercentage(loadingPercentage + 1);
         };
