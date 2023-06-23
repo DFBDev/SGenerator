@@ -48,6 +48,7 @@ const SearchResultPage: NextPage = () => {
 
     const songSearchQuery = () => {
         //Function for executing API request concurrent with current user input data.
+
         var tracksRequestInfo = {
             method: 'GET', 
             headers: {
@@ -107,10 +108,9 @@ const SearchResultPage: NextPage = () => {
         .catch(error => {console.log(error)});
       };
 
-    //Fetching/Parsing JSON results from Local Storage and applying it to state to
-    //keep in sync with Local Storage (with limiter to prevent unlimited rerendering).
-
     const dataUpdate = () => {
+        //Fetching/Parsing JSON results from Local Storage and applying it to state to
+        //keep in sync with Local Storage (with limiter to prevent unlimited rerendering).
         if (typeof window !== 'undefined'){
             let updatedLocalStorage = JSON.parse(localStorage?.getItem("fetchedSongs")!);
 
@@ -129,6 +129,8 @@ const SearchResultPage: NextPage = () => {
     };
 
     if (typeof window !== 'undefined'){
+        //Creating audio sample instances once window fully renders.
+        
         var songSample1 = new Audio(tempStoredSongsRaw.track1!.AudioSampleURL);
         var songSample2 = new Audio(tempStoredSongsRaw.track2!.AudioSampleURL);
         var songSample3 = new Audio(tempStoredSongsRaw.track3!.AudioSampleURL);

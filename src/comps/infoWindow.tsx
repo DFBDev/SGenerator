@@ -7,6 +7,7 @@ export const InfoWindow = (props : {status : string}) : JSX.Element => {
 
     useEffect(() => {
         if (props.status != "initialInactive"){
+            //Status for popup for render/derender.
             setES("noexit");
         };
     }, [props.status]);

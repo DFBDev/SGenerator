@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      {/* Stage 1 - Header Section */}
+      {/* Header Section */}
       <header className={styles.header}>
         <div className='flex justify-center items-center ml-6 mt-6'>
           <Image className={styles.logoImage} src={"/images/Group 3.svg"} width={40} height={40} alt="Spotify Logo"></Image>
@@ -20,7 +20,7 @@ export default function Home() {
           ?
         </button>
       </header>
-      {/* Stage 2 - Middle Headers & Form Container */}
+      {/* Middle Headers & Form Container */}
       <section className={styles.homeMainMidContainer}>
         <h1 className={styles.mainHeadingOneMid}>Having a hard time finding new songs?</h1>
         <h2 className={styles.mainHeadingTwoMid}>
@@ -39,7 +39,7 @@ export default function Home() {
         </form>
         <h3 className={styles.midFooter}>API and Services are sole property of SpotifyAB™</h3>
       </section>
-      {/* Stage 3 - Information/Support Pop-up Window */}
+      {/* Information/Support Pop-up Window */}
       <InfoWindow status={overlayStatus}/>
     </main>
   )

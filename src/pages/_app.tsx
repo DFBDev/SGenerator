@@ -135,6 +135,8 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setTimeout(() => 
     {
+      //Extracting SpotifyAPI token.
+
       localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
       const searchButton = document.querySelector('#searchButton');
       searchButton?.addEventListener('click', songSearchQuery);
@@ -153,7 +155,7 @@ export default function App({ Component, pageProps }: AppProps) {
     }, 200)
   });
 
-  //Coupled with preloader component, as well as consistent state via useRef.
+  //Necessary Ref and delay for LoadingWindow component.
 
   const preloaderStatus = useRef("active");
   
