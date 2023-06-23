@@ -178,7 +178,7 @@
     flex-direction:column;
     gap:1.1rem;
     width:30vw;
-    height:86vh;
+    height:70vh;
     min-width:320px;
     max-height:650px;
     max-width:500px;
@@ -214,7 +214,7 @@
 }
 .tracksH2{
     font-size:0.8rem;
-    width:60%;
+    width:80%;
     color:#A6C29F;
     margin-left:0.45%; 
 }
