@@ -31,9 +31,8 @@ export default function Home() {
         <form className={styles.searchFormContainerMid}>
           <input className={styles.searchBarMid} type="text" placeholder='Enter artist or genre!' onChange={data => {localStorage?.setItem("UserTrackSearchInput", data.currentTarget.value)}}/>
           <span className={styles.lockOnEffect}></span>
-          <label htmlFor="searchInput"></label>
-          <Link href={"/searchresults/searchPage"} className={styles.searchButtonMid} id='searchButton'>
-            <button type="submit" className='searchButton'>
+          <Link href={"/searchresults/searchPage"} className={styles.searchButtonMid} id='searchButton' aria-label='SearchButton'>
+            <button type="submit" aria-label={"Search Button"}>
               <div className={styles.buttonGraphicMid}></div>
             </button>
           </Link>
