@@ -28,10 +28,12 @@ export const InfoWindow = (props : {status : string}) : JSX.Element => {
                     </header>
                     <article className={styles.supportInformationContent}>
                         <p className={styles.supportInformationParagraph}>
-                            For any issues regarding bugs, suggestions, or anything else of concern, please contact <br/>
+                            All data provided is purely owned by Spotify.
+                            For any issues regarding bugs, suggestions, or anything else of concern, please contact&nbsp;
                             <a className={styles.supportInformationAnc} target="_blank" href="mailto:dbdevbusiness@gmail.com">
                                 dbdevbusiness@gmail.com
                             </a>
+                            .
                         </p>
                         <hr className={styles.supportInformationLineDivider}></hr>
                         <p className={styles.supportInformationParagraph}>

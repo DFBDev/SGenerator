@@ -12,8 +12,3 @@ Features:
 -Intuitive, portable UI design.
 -Seamless SpotifyAPI integration to find content of all kinds!
 -Links provided to those signed in with a Spotify account (unable to do so without proper authentication).
-
-Next Changes:
-
--Double check spotify imagery copyright.
--Accessibility improvements.
