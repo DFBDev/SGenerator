@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>RadioHill</title>
+        <meta name="description" content="Free, Randomized Spotify song generator. No account required."></meta>
       </Head>
       <body>
         <Main />
