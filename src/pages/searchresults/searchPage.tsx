@@ -171,7 +171,9 @@ const SearchResultPage: NextPage = () => {
                             localStorage?.setItem("UserTrackSearchInput", data.currentTarget.value)
                             }}></input>
                             <div className={styles.reinputButton}>
-                                <Image src={"/images/refreshSearch.svg"} width={22} height={22} alt={"Search Again"}></Image>
+                                <Image src={"/images/refreshSearch.svg"} 
+                                width={22} height={22} alt={"Search Again"}
+                                onClick={songSearchQuery}></Image>
                             </div>
                             <button className={styles.animationMarker2}></button>
                         </div>
@@ -283,7 +285,7 @@ const SearchResultPage: NextPage = () => {
                                 }}>
                                 <Image className={"mr-0.5"} src={"/images/Group 4.svg"} height={12} width={12} alt={"Playback Button"}></Image>
                             </button>
-                            <a href={tempStoredSongsRaw.track3.ImageURL} target={"_blank"}>
+                            <a href={tempStoredSongsRaw.track3.SongURL} target={"_blank"}>
                                 <Image src={"/images/spotify.png"} width={28} height={28} alt="Spotify Logo"></Image>
                             </a>
                         </div>
