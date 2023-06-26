@@ -170,7 +170,7 @@
     border-radius:0.3rem;
     transition:all 0.2s ease-in-out;
     overflow: hidden;
-    animation: apiLOAD 4s ease-in-out;
+    animation: apiLOAD 6s ease-in-out;
     margin-left:auto;
     margin-right:auto;
 }
@@ -179,6 +179,7 @@
     opacity:0.5;
     font-size:0.8rem;
 }
+
 /* ------ Pseudo Elements/Features ------ */
 
 .searchBarMid::placeholder{
