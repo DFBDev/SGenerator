@@ -35,11 +35,9 @@
     /* Cooldown animation for search-button (prevent home page spam) */
     0%{
         opacity:0.3;
-        pointer-events: none;
     }
     90%{
         opacity:0.3;
-        pointer-events: none;
     }
     100%{
         opacity:1;
@@ -131,6 +129,18 @@
     z-index:2;
     animation:apiLOAD 3s ease-in-out;
 }
+.reinputButtonAlt{
+    margin-top:5%;
+    margin-right:auto;
+    transition:all 0.2s ease-in-out;
+    background-color: rgb(0, 61, 8);
+    padding:2%;
+    border-top-right-radius:0.8rem;
+    border-bottom-right-radius:0.8rem;
+    z-index:2;
+    opacity:0.5;
+    animation:apiLOAD 3s ease-in-out;
+}
 .refreshButton{
     width:2.5rem;
     height:2.5rem;
@@ -151,7 +161,20 @@
     margin-top:1.7rem;
     position:absolute;
     cursor:pointer;
-    animation:apiLOAD 3s ease-in-out;
+    animation:apiLOAD 2s ease-in-out;
+}
+.animationMarkerAlt{
+    width:30%;
+    height:10%;
+    max-width:40px;
+    max-height:40px;
+    z-index:3;
+    margin-left:23rem;
+    margin-top:1.7rem;
+    position:absolute;
+    pointer-events:none;
+    cursor:none;
+    transition:all 0.0001ms ease-in-out;
 }
 .animationMarker2{
     width:30%;

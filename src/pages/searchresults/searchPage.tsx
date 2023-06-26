@@ -45,6 +45,7 @@ const SearchResultPage: NextPage = () => {
       });
 
     const [tempStoredSongsRaw, setTSSS] = useState(responseData.current);
+    const [reinputLock, setRL] = useState(false);
 
     const songSearchQuery = () => {
         //Function for executing API request concurrent with current user input data.
@@ -103,6 +104,13 @@ const SearchResultPage: NextPage = () => {
             
             localStorage.setItem("fetchedSongs", JSON.stringify(responseData.current));
             setTSSS(JSON.parse(JSON.stringify(responseData.current)));
+
+            //Activating and deactivating reinput button lock to prevent spam.
+
+            if (reinputLock === false) {
+                setRL(true);
+            }
+            setTimeout(() => setRL(false), 6000);
           }
         )
         .catch(error => {console.log(error)});
@@ -166,12 +174,12 @@ const SearchResultPage: NextPage = () => {
                 </nav>
                 {tempStoredSongsRaw.track1.Artist != "" && (
                         <div className={styles.reinputContainer}>
-                            <div className={styles.animationMarker} onClick={songSearchQuery}></div>
+                            <div className={reinputLock === false ? styles.animationMarker : styles.animationMarkerAlt} onClick={songSearchQuery}></div>
                             <input className={styles.reinputSearchField} type={"text"} placeholder={"Check out some other songs!"} onChange={data => {
                             localStorage?.setItem("UserTrackSearchInput", data.currentTarget.value)
                             }}></input>
-                            <div className={styles.reinputButton}>
-                                <Image src={"/images/refreshSearch.svg"} 
+                            <div className={reinputLock === false ? styles.reinputButton : styles.reinputButtonAlt}>
+                                <Image src={"/images/refreshSearch.svg"}
                                 width={22} height={22} alt={"Search Again"}
                                 onClick={songSearchQuery}></Image>
                             </div>
