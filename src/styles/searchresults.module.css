@@ -174,7 +174,6 @@
     position:absolute;
     pointer-events:none;
     cursor:none;
-    transition:all 0.0001ms ease-in-out;
 }
 .animationMarker2{
     width:30%;
@@ -186,7 +185,7 @@
     position:absolute;
     border-radius:0.8rem;
     background: linear-gradient(270deg, rgba(75, 200, 42, 0.6) 0%, rgba(217, 217, 217, 0.00) 100%);
-    transition:all 0.3s ease-in-out;
+    transition:all 0.1s ease-in-out;
     opacity:0;
 }
 
